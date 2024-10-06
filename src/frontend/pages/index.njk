@@ -1,0 +1,57 @@
+---
+layout: base.template.njk
+title: Eleventy with Vite
+---
+{%- from "./../templates/_setup/macros/component.macro.njk" import component -%}
+
+{{
+    component("search", {
+        placeholder: "Suche",
+        uid: "projects",
+        category: "projects",
+        no_result: ["Looks like that we cannot find your search term:", "" ]
+    })
+}}
+<div class="btn-group mt-3">
+    <button id="zoomIn" class="btn btn-primary">Zoom In</button>
+    <button id="zoomOut" class="btn btn-secondary">Zoom Out</button>
+    <button id="resetZoom" class="btn btn-danger">Reset</button>
+  </div>
+{% for key, event in projects['events'] %}
+{% set eventKey = key %}
+    {% set isActive = "" if loop.index == 1 else "hidden" %}
+
+    <section class="switch__target  {{isActive}}"  data-key="{{key}}" data-type="events" data-index="{{loop.index}}">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        {% for key, floor in event['floors'] %}
+                            <li class="nav-item switch__button button--{{eventKey}}" data-key="{{key}}" data-type="floors" data-index="{{loop.index}}">
+                                {% set activeClass = 'active' if loop.index == 1 else '' %}
+                                <a class="nav-link {{activeClass}}" >{{ floor.title }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h1><img src="{{ event.logo | safe}}" alt="" height="30"> &nbsp;{{event.title}}</h1>
+        {% for key, floor in event['floors'] %}
+        <div class="switch__target"  data-key="{{key}}" data-type="floors" data-index="{{loop.index}}">
+            <div class="svg__container">
+                <img class="map__item zoomable" src="{{ floor.image | safe}}" id="{{ key }}" alt="{{ floor.title }}" style="width:500px" />
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+{% endfor %}
+
+
+  
+ 
+
+  

@@ -1,0 +1,34 @@
+{
+    "events": {
+        "ng": {
+            "title": "NG-DE",
+            "logo": "/assets/logo-ng-de.svg",
+            "logoClass": "",
+            "floors": {
+                "floor_0": {
+                    "title": "Erdgeschoss",
+                    "image": "/assets/FLOOR_0_ng.svg"
+                },
+                "floor_1": {
+                    "title": "1. Etage",
+                    "image": "/assets/FLOOR_1_ng.svg"
+                }
+            }
+        },
+        "vue": {
+            "title": "vueJS.de",
+            "logo": "/assets/logo-vuejs.svg",
+            "logoClass": "bg-white",
+            "floors": {
+                "floor_0": {
+                    "title": "Erdgeschoss",
+                    "image": "/assets/FLOOR_0_vue.svg"
+                },
+                "floor_1": {
+                    "title": "1. Etage",
+                    "image": "/assets/FLOOR_1_vue.svg"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+
+@import './components/_fonts.css';
+@import './../../components/molecules/search/search.molecule.css';
+@import './../../components/molecules/chip/chip.molecule.css';
+@import './components/_levels.css';
+@import './components/_activity.css';
+
+.hidden {
+    display: none;
+}
+
+body{
+    /* background-color: #202125;
+    color: white; */
+    font-family:monospace;
+}
+
+.bg-danger >  td {
+    background-color: #ff0000;
+}
+.bg-warning > td {
+    background-color: #ffcc00;
+}
+.bg-success > td {
+    background-color: #00ff00;
+}   
+
+
+
+.logo-container {
+    width: 40px; /* Set the width of the visible part */
+    height: 40px; /* Set the height */
+    overflow: hidden; /* Hide anything that exceeds the container */
+  }
+  
+  .logo-img {
+    width: auto; /* Allow the logo to keep its original aspect ratio */
+    height: 100%; /* Ensure the height fits the container */
+    object-position: left; /* Show the left side of the image */
+    object-fit: cover; /* Prevent distortion */
+  }
+
+  .switch__button:not(.active) *{
+    opacity: 0.5;
+  }
+  .switch__button:hover{
+    cursor: pointer;
+  }
+
+  .button--ng.active{
+    background-color: #e84118;
+    background-image: linear-gradient(45deg, #e84118, #e67e22);
+  }
+  .button--vue.active{
+    background-color: #41b883;
+  }
+  .button--vue.active *,
+  .button--ng.active * {
+    font-weight: bold;
+    color: white !important;
+  }
+ .svg__container{
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    border: 1px solid #ccc;
+ }
